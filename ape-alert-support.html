@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ape Alert — Support</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #000000;
+      --white: #ffffff;
+      --gray-100: #f5f5f7;
+      --gray-200: #e8e8ed;
+      --gray-400: #aeaeb2;
+      --gray-600: #636366;
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 22px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--gray-200);
+      padding: 0 24px;
+      height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--black);
+    }
+
+    .logo-mark {
+      width: 32px;
+      height: 32px;
+      background: var(--black);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .logo-mark svg { display: block; }
+
+    .nav-name {
+      font-size: 15px;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+    }
+
+    .content {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 72px 24px 96px;
+    }
+
+    .page-label {
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--gray-400);
+      margin-bottom: 16px;
+    }
+
+    .page-title {
+      font-size: clamp(30px, 5vw, 44px);
+      font-weight: 700;
+      letter-spacing: -1.2px;
+      line-height: 1.1;
+      margin-bottom: 8px;
+    }
+
+    .page-subtitle {
+      font-size: 17px;
+      color: var(--gray-600);
+      margin-bottom: 48px;
+      line-height: 1.5;
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--gray-200);
+      margin: 40px 0;
+    }
+
+    h2 {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.4px;
+      margin-bottom: 16px;
+    }
+
+    p {
+      font-size: 16px;
+      color: var(--gray-600);
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    p:last-child { margin-bottom: 0; }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .faq-item {
+      border-top: 1px solid var(--gray-200);
+      padding: 20px 0;
+    }
+
+    .faq-item:last-child {
+      border-bottom: 1px solid var(--gray-200);
+    }
+
+    .faq-q {
+      font-size: 16px;
+      font-weight: 600;
+      letter-spacing: -0.2px;
+      color: var(--black);
+      margin-bottom: 8px;
+    }
+
+    .faq-a {
+      font-size: 15px;
+      color: var(--gray-600);
+      line-height: 1.65;
+    }
+
+    .contact-card {
+      background: var(--black);
+      color: var(--white);
+      border-radius: var(--radius-lg);
+      padding: 40px;
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .contact-card .page-label {
+      color: rgba(255,255,255,0.45);
+      margin-bottom: 12px;
+    }
+
+    .contact-heading {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .contact-sub {
+      font-size: 15px;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 24px;
+    }
+
+    .contact-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.18);
+      border-radius: 50px;
+      padding: 12px 22px;
+      font-size: 15px;
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      letter-spacing: -0.1px;
+      transition: background 0.2s;
+    }
+
+    .contact-pill:hover { background: rgba(255,255,255,0.18); }
+
+    a { color: var(--black); }
+
+    footer {
+      border-top: 1px solid var(--gray-200);
+      padding: 24px;
+      text-align: center;
+      font-size: 13px;
+      color: var(--gray-400);
+    }
+
+    @media (max-width: 480px) {
+      .contact-card { padding: 32px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a class="nav-brand" href="/">
+      <div class="logo-mark">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="3" y="15" font-family="-apple-system, Helvetica Neue, Arial" font-size="13" font-weight="700" fill="white">EP</text>
+        </svg>
+      </div>
+      <span class="nav-name">Esemby Properties</span>
+    </a>
+    <a style="font-size:13px; padding:7px 16px; background:#000; border:1px solid #e8e8ed; color:#fff; border-radius:50px; text-decoration:none; font-weight:500;" href="mailto:esembyproperties@gmail.com">Contact</a>
+  </nav>
+
+  <div class="content">
+    <p class="page-label">Support</p>
+    <h1 class="page-title">Ape Alert Support</h1>
+    <p class="page-subtitle">Get help with call reminders, tokens, account settings, and more.</p>
+
+    <h2>Frequently Asked Questions</h2>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <p class="faq-q">I didn't receive my reminder call. What happened?</p>
+        <p class="faq-a">A few things to check: make sure your phone number is verified correctly in Account settings, your token balance is greater than zero, and your phone isn't on Do Not Disturb or Focus mode. If your balance hit zero, the call won't be placed — top up tokens and reschedule the reminder. If the problem persists, contact us below.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">How do tokens work?</p>
+        <p class="faq-a">Each call attempt uses one token. If you set max retries to 2, a missed first call will use a second token on the retry. Your token balance is stored in the cloud — it won't reset if you reinstall the app, change phones, or log out. New accounts receive free tokens to get started.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">My token balance didn't update after a purchase.</p>
+        <p class="faq-a">Go to Account → tap "Sync Balance" to manually refresh your balance from the server. If the purchase went through Apple but tokens weren't credited, contact us with your Apple transaction ID and we'll credit your account.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">How do I change my phone number?</p>
+        <p class="faq-a">Go to Account → "Change Phone Number." You'll receive a verification call on your new number to confirm the change. Each account can change its phone number once.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">How do I set up a recurring reminder?</p>
+        <p class="faq-a">When creating a reminder, toggle on "Recurring" and set the interval (e.g. every 8 hours, every day). Recurring reminders fire automatically on your schedule until you delete them. They appear at the top of your reminder list.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Can I reschedule a reminder I missed?</p>
+        <p class="faq-a">Yes. Tap any past reminder in the list and select "Reschedule." You'll be prompted to pick a new time. The original reminder stays in your history and a new one is created.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">The call came in but I couldn't hear the message.</p>
+        <p class="faq-a">Make sure your phone volume is turned up during the call. The reminder message appears as the caller name on your lock screen before you answer — so you can see it even without audio. If audio is consistently missing, contact us.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">How do I delete my account?</p>
+        <p class="faq-a">Email us at <a href="mailto:esembyproperties@gmail.com">esembyproperties@gmail.com</a> with the subject "Delete Account" and include the phone number associated with your account. We'll delete all your data within 7 days.</p>
+      </div>
+
+      <div class="faq-item">
+        <p class="faq-q">Is Ape Alert available on Android?</p>
+        <p class="faq-a">Not currently. Ape Alert is iPhone-only at this time.</p>
+      </div>
+
+    </div>
+
+    <!-- Contact card -->
+    <div class="contact-card">
+      <p class="page-label">Still need help?</p>
+      <h2 class="contact-heading">Contact Support</h2>
+      <p class="contact-sub">Email us and we'll get back to you as soon as possible.</p>
+      <a class="contact-pill" href="mailto:esembyproperties@gmail.com">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <rect x="1" y="3" width="14" height="10" rx="2" stroke="white" stroke-width="1.4" fill="none"/>
+          <path d="M1 5 L8 9.5 L15 5" stroke="white" stroke-width="1.4" stroke-linecap="round"/>
+        </svg>
+        esembyproperties@gmail.com
+      </a>
+    </div>
+
+  </div>
+
+  <footer>
+    &copy; 2026 Esemby Properties LLC. All rights reserved. &nbsp;·&nbsp;
+    <a href="/ape-alert-privacy.html" style="color: var(--gray-400); text-decoration: none;">Privacy Policy</a>
+  </footer>
+
+</body>
+</html>
